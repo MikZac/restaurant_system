@@ -260,7 +260,7 @@ span .navbar-toggler-icon{
     margin-top: 70px;
     display: flex;
     justify-content: center; /* Wyśrodkowanie poziome */
-    min-height: 100vh;
+    
     background-image: url(image/reservation-background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -528,6 +528,7 @@ span .navbar-toggler-icon{
 
 /*-----DASHBOARD-----*/
 .dashboard-wrapper {
+    min-height: 100vh;
     margin-top: 70px;
     
 }
@@ -605,6 +606,7 @@ span .navbar-toggler-icon{
 
 /*----DashboardMenu----*/
 .panel-admin-menu {
+    min-height: 100vh; 
     margin-top: 70px;
     
 }
@@ -710,6 +712,7 @@ span .navbar-toggler-icon{
 /*----Dashboard-Add-Dish----*/
 
 .add-dish-wrapper {
+    min-height: 100vh; 
     margin-top: 70px;
     display: flex;
     justify-content: center; /* Wyśrodkowanie poziome */
@@ -717,7 +720,7 @@ span .navbar-toggler-icon{
 }
 .add-dish-form{
 
-
+    height: 60%;
 margin-top: 100px;
     margin-bottom: 100px;
     padding: 50px;
@@ -781,13 +784,14 @@ margin-top: 100px;
 }
 /*----Dashboard-Edit-Dish----*/
 .modalBackground {
+    min-height: 100vh; 
     margin-top: 70px;
     display: flex;
     justify-content: center; /* Wyśrodkowanie poziome */
 }
 
 .modalContainer {
-
+    height: 60%;
     margin-top: 100px;
     margin-bottom: 100px;
     padding: 50px;
@@ -847,7 +851,7 @@ margin-top: 100px;
 
 /*----DashboardReservation---*/
 .panel-admin-reservation {
-   
+    min-height: 100vh; 
     margin-top: 70px;
 
 }
@@ -947,7 +951,6 @@ margin-top: 100px;
         width: 100%;
         min-height: 200px;
         background-color: black;
-
         padding-top: 30px;
         padding-bottom: 30px;
     }
