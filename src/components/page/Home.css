@@ -1,0 +1,992 @@
+/*------HOME-----*/
+
+.home-carusel {
+    height: 100vh;
+}
+.carusel-image {
+    height: 100vh;
+    object-fit: cover;
+}
+
+.carousel-control-prev  {
+    display: none;
+}
+.carousel-control-next {
+    display: none;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .slider-heading {
+    font-size: 62px;
+  }
+  
+  .slider-text {
+    font-size: 24px;
+  }
+  .home-section-first {
+    background-color: white;
+    margin: auto;
+  }
+  .home-section-menu {
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .section-menu-text {
+    padding: 40px;
+    text-align: center;
+    color: black;
+    width: 50%;
+  }
+  .section-menu-image {
+    padding: 20px;
+    width: 50%;
+  }
+  .section-menu-image img {
+    width: 80%;
+  }
+  .section-menu-text button {
+    border: 1px solid black; 
+    background-color: black;
+    color: white;
+    padding: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: .3s;
+  }
+  .section-menu-text button:hover {
+    border: 1px solid black;
+    color: black;
+    background-color: white;
+  }
+
+  .home-section-second {
+    text-align: center;
+    background-color: black;
+    margin: auto;
+    padding-bottom: 30px;
+    
+  }
+  .section-second-wrapper {
+    margin: auto;
+    max-width: 1000px;
+  }
+  .section-second-text {
+    margin: auto;
+    
+    padding: 50px;
+  }
+  .home-section-second h2 {
+    
+    color: white;
+    margin-bottom: 20px;
+  }
+  .home-section-second p {
+    font-size: 14px;
+  }
+  .home-section-second img  {
+    object-fit: cover;
+    height: 400px;
+  }
+  .section-second-wrapper button {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    border: 1px solid white;
+    background-color: white;
+    color: black;
+    padding: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: .3s;
+
+  }
+  .section-second-wrapper button:hover {
+    border: 1px solid white;
+    color: white;
+    background-color: black;
+  }
+.home-section-third {
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.contact-details {
+    margin-top: 20px;
+    padding-left: 60px;
+    text-align: left;
+}
+.reservation-image img {
+    width: 60%;
+    height: 150px;
+    object-fit: cover;
+
+}
+@media screen and (max-width: 850px) {
+    .section-menu-text,
+    .section-menu-image {
+      width: 100%;
+      text-align: center;
+    }
+    .section-menu-image {
+        padding: 0px;
+    }
+    .section-menu-image img {
+        width: 100%;
+      }
+    .home-section-menu  {
+        flex-direction: column;
+    }
+    .home-section-third {
+        flex-direction: column;
+    }
+    .reservation-image img 
+    {
+        height: 300px;
+    }
+  }
+/*---Navbar---*/
+
+nav {
+    height: 70px;
+    background-color: black !important;
+   
+}
+.navbar-collapse {
+    background-color: black;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+ 
+}
+.navbar-brand {
+    color: white;
+}
+.navbar-toggler {
+    border: 1px solid white;
+    color: white;
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+span .navbar-toggler-icon{
+    color: white !important;
+}
+.nav-link {
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+}
+.nav-link {
+    color: white;
+}
+.nav-link:hover {
+    color: white;
+}
+.nav-link:focus {
+    color: white;
+}
+.navbar-nav {
+    margin: auto;
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+   
+/*----Menu---- */
+
+.menu-wrapper {
+    width: 100% !important;
+    text-align: center;
+    background-image: url(image/menu-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    padding-top: 100px;
+    
+   
+}
+
+.menu-wrapper h1 {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.menu {
+    margin: auto;
+    max-width: 1024px;
+    text-align: left;
+    border: 2px solid whitesmoke;
+    padding: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.menu h2 {
+    text-align: center;
+    font-size: 32px;
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    letter-spacing: 2px;
+
+}
+.dishWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*----Reservation---*/
+.reservation {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie poziome */
+    min-height: 100vh;
+    background-image: url(image/reservation-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.form-wrapper
+{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 50px;
+    
+    background-color: black;
+    border-radius: 5%;
+}
+
+
+.form-wrapper h1 {
+    font-size: 36px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+    
+
+.form-wrapper form div {
+    text-align: center;
+    padding-bottom: 12px;
+}
+
+.form-wrapper form div input {
+    margin-left: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    color: black;
+    font-size: 16px;
+    border-color: #9e9e9e;
+
+}
+
+.form-wrapper form div select {
+    margin-left: 10px;
+    padding: 4px;
+    border-radius: 10px;
+    font-size: 16px;
+    border-color: #9e9e9e;
+    border: 2px solid #9e9e9e;
+}
+
+.form-wrapper form button {
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    background-color: #FFFFFF;
+    border-radius: 7px;
+
+}
+.form-label-text {
+    display: block;
+    text-align: center; /* Wyśrodkuj tekst na szerokości 1250 px */
+}
+.send-reservation-form {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 1250px) {
+
+    .form-label-text {
+        display: inline;
+        text-align: left;
+    }
+    .form-wrapper {
+        width: 50%;
+        text-align: left;
+        padding: 100px;
+        padding-left: 100px;
+    padding-right: 100px;
+    }
+    .form-wrapper form div {
+        text-align: left;
+        
+    }
+    .send-reservation-form {
+        display: inline;
+        
+    }
+    
+}
+
+.error {
+    padding-top: 3px;
+    color: red;
+}
+.success-message {
+    margin-top: 20px;
+    border: 1px solid greenyellow;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.error-message {
+    margin-top: 20px;
+    border: 1px solid rgb(255, 47, 47);
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/*-----Party-Organization----*/
+
+.wrapper-party{
+    margin-top: 70px;
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie poziome */
+    min-height: 100vh; 
+    background-image: url(image/party-organization-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    
+    
+}
+
+.party-organization{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 50px;
+    background-color: black;
+    border-radius: 5%;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+    
+}
+.party-organization-title {
+    text-align: center;
+    padding-bottom: 20px;
+}
+.calculator-form-div {
+    padding-bottom: 10px;
+}
+.input-span {
+    display: block;
+    padding-bottom: 5px;
+}
+.calculator-form-input {
+    font-size: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 15px;
+    border-radius: 5px;
+    
+}
+.calculator-form-input:focus {
+    outline: none;
+}
+.calculator-form-checkbox {
+    margin-left: 10px;
+    display: inline-block;
+}
+.calculated-btn {
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    background-color: #FFFFFF;
+    border-radius: 7px;
+    border: 0px;
+}
+.reset-btn {
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    background-color: #94b9ff;
+    border-radius: 7px;
+    border: 0px;
+}
+.main-price {
+    margin-top: 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.detail-offer {
+    margin-top: 10px;
+}
+@media screen and (min-width: 900px) {
+    .party-organization{
+        padding-left: 150px;
+    padding-right: 150px;
+    }
+    .input-span {
+        font-size: 16px;
+    }
+    .calculator-form-input {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 16px;
+    }
+    .calculator-form-span {
+        font-size: 18px;
+    }
+
+}
+
+/*----Admin----*/
+.wrapper-admin {
+    
+    margin-top: 70px;
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie poziome */
+    min-height: 100vh; 
+    position: relative;
+}
+.admin-form {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 100px;
+    height: 400px;
+    background-color: #ddd;
+    padding: 70px;
+    padding-top: 30px;
+    border-radius: 5%;
+    text-align: center;
+}
+
+.admin-form h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: black;
+}
+
+.admin-label {
+    margin-right: 10px;
+    font-size: 16px;
+    color: black;
+}
+
+.admin-form input {
+    padding: 7px;
+    border-radius: 7px;
+    margin-bottom: 15px;
+}
+
+.admin-form button {
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 7px;
+}
+.admin-go-back {
+    padding-top: 10px;
+}
+.admin-go-back-link {
+    
+    text-decoration: none;
+}
+
+/*-----DASHBOARD-----*/
+.dashboard-wrapper {
+    margin-top: 70px;
+    
+}
+.panel-admin {
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+.panel-admin-title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.dashboard-menu-box {
+    text-align: center;
+    width: 40%;
+    margin: 10px;
+    border: 1px solid white;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+}
+.dashboard-menu-box h2 a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.dashboard-reservation-box {
+    text-align: center;
+    width: 40%;
+    margin: 10px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.dashboard-reservation-box h2 a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.panel-admin-title {
+    text-align: center;
+}
+.option-boxes {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.panel-admin .btn-go-back {
+    display: block;
+    width: 300px;
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+}
+@media screen and (max-width: 450px) {
+    .dashboard-menu-box {
+        width: 50%;
+    }
+    .dashboard-reservation-box h2 a {
+        font-size: 20px;
+        padding: 5px;
+    }
+    .dashboard-menu-box h2 a {
+        font-size: 20px;
+        padding: 5px;
+    }
+
+
+}
+
+
+/*----DashboardMenu----*/
+.panel-admin-menu {
+    margin-top: 70px;
+    
+}
+.dashboard-menu-wrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+.dashboard-menu-wrapper h1 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.btn-add-dish {
+    display: block;
+    margin-bottom: 30px;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(105, 155, 31);
+    cursor: pointer;
+
+}
+.btn-add-dish:hover {
+    color: white;
+}
+.accordion-item {
+    width: 700px;
+}
+.dish-name h3 {
+    font-size: 20px !important;
+}
+.edit-link {
+    display: inline-block;
+    text-decoration: none;
+    background-color: rgb(105, 155, 31);
+    color: white;
+    border: 0px;
+    font-size: 16px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+.edit-link:hover {
+    color: white;
+}
+.btn-delete {
+    color: white;
+    background-color: rgb(211, 59, 59);
+    border: 0px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 5px;
+    cursor: pointer
+}
+.dish-ingredients p {
+    margin-bottom: 2px;
+}
+.according-element {
+    margin-bottom: 15px;
+}
+@media screen and (max-width: 900px) {
+   
+    .accordion-item {
+        width: 90vw;
+    }
+}
+.accordion-button {
+    color: white;
+    background-color: black;
+}
+.accordion-button:not(.collapsed) {
+    background-color: black;
+}
+.btn-go-back {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #94b9ff;
+    color: white;
+    border: 0px;
+    font-size: 16px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.btn-go-back:hover {
+    color: white;
+}
+/*----Dashboard-Add-Dish----*/
+
+.add-dish-wrapper {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie poziome */
+    
+}
+.add-dish-form{
+
+
+margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 50px;
+    background-color: black;
+    border-radius: 5%;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.add-dish-form h3 {
+    margin-bottom: 30px;
+}
+.add-dish-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+.add-dish-form input {
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 7px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+
+}
+.add-dish-form select {
+    
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: block;
+    padding: 7px;
+}
+.add-dish-form button {
+    background-color: rgb(105, 155, 31);
+    color: white;
+    border: 0px;
+    font-size: 16px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.error-message {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    border: 2px solid red;
+}
+.add-dish-go-back-link {
+    display: block;
+    margin-top: 10px;
+    text-decoration: underline;
+    color: white;
+    cursor: pointer;
+}
+.add-dish-go-back-link:hover {
+    color: white;
+}
+/*----Dashboard-Edit-Dish----*/
+.modalBackground {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie poziome */
+}
+
+.modalContainer {
+
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 50px;
+    background-color: black;
+    border-radius: 5%;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.modalContainer h3 {
+    margin-bottom: 30px;
+}
+.modalContainer label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+.modalContainer input {
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 7px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+
+}
+.modalContainer select {
+    
+    margin: auto;
+    margin-top: 10px;
+    display: block;
+    padding: 7px;
+}
+.modalContainer button {
+    background-color: rgb(105, 155, 31);
+    color: white;
+    border: 0px;
+    font-size: 16px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.modal-container-back-link {
+    display: block;
+    margin-top: 10px;
+    text-decoration: underline;
+    color: white;
+    cursor: pointer;
+}
+.modal-container-back-link:hover{
+    color: white;
+}
+
+/*----DashboardReservation---*/
+.panel-admin-reservation {
+   
+    margin-top: 70px;
+
+}
+.dashboard-reservation-wrapper {
+    margin: auto;
+}
+.class{
+    margin-left: 100px;
+    margin-right: 100px ;
+    display: flex;
+    justify-content: space-evenly;
+}
+.panel-admin-reservation h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 100px;
+    font-size: 32px;
+}
+.unconfirmed button {
+    color: red !important;
+}
+.confirmed button {
+    color: white;
+}
+.class .accordion-item {
+    width: 100%;
+}
+.class accordion {
+    width: 100%;
+}
+.reservation-headline {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+.btn-confirmed {
+    color: white;
+    background-color: rgb(5, 80, 15);
+    border: 0px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.class > * {
+    flex-grow: 1;
+  }
+  .link-reservation {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+  .today-reservation, .reservations-confirmed, .reservations-unconfirmed{
+    border: 1px solid whitesmoke;
+    margin: 5px;
+    padding: 10px;
+  }
+
+@media (max-width: 1250px) {
+    .class {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .class .today-reservation,
+    .class .reservations-confirmed,
+    .class .reservations-unconfirmed {
+      width: 100%;
+    }
+    
+    .class .accordion-item {
+      width: 100%;
+    }
+    .reservation-headline {
+        margin-top: 40px;
+    }
+    .panel-admin-reservation h1 {
+        margin-bottom: 20px;
+    }
+    .class .accordion-collapse.collapse.show {
+        width: 100%;
+    }
+  }
+
+  /*---EditReservation----*/
+  
+    @media (min-width: 750px) {
+        .container-edit-reservation  {
+            width: 50%;
+        }
+    }
+    
+
+    /*----Footer----*/
+    .footer-wrapper {
+        width: 100%;
+        min-height: 200px;
+        background-color: black;
+
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .footer-text {
+       
+        font-size: 14px;
+
+    }
+    .footer h3 {
+        font-size: 18px;
+
+    }
+    .footer a {
+        font-size: 13px;
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+    }
+    .footer-headline {
+        height: 70px;
+        overflow: hidden;
+    }
+    .row .col-md-3 {
+        margin-bottom: 20px;
+        padding-left: 30px;
+      }
+      .row .col-md-3:not(:last-child) {
+        border-bottom: 1px solid whitesmoke;
+      }
+
+      @media (min-width: 768px) {
+        .row .col-md-3:not(:last-child) {
+            border-right: 1px solid whitesmoke;
+            border-bottom: 0px
+          }
+          .row .col-md-3 {
+            
+            padding-left: 30px;
+          }
+    }
+
+    
