@@ -205,6 +205,15 @@ span .navbar-toggler-icon{
 .navbar-toggler:focus {
     box-shadow: none;
 }
+.navbar-brand {
+    color: white;
+}
+.navbar-brand:hover {
+    color: white;
+}
+.navbar-brand:focus {
+    color: white;
+}
 
    
 /*----Menu---- */
