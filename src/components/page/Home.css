@@ -542,6 +542,7 @@ span .navbar-toggler-icon{
     padding-bottom: 20px;
 }
 .dashboard-menu-box {
+    text-decoration: none;
     text-align: center;
     width: 40%;
     margin: 10px;
@@ -552,22 +553,24 @@ span .navbar-toggler-icon{
     align-items: center;
     background-color: rgb(0, 0, 0);
 }
-.dashboard-menu-box h2 a {
+.dashboard-menu-box h2 {
     color: white;
     text-decoration: none;
     cursor: pointer;
 }
 .dashboard-reservation-box {
+    text-decoration: none;
     text-align: center;
     width: 40%;
     margin: 10px;
     border: 1px solid white;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: black;
 }
-.dashboard-reservation-box h2 a {
+.dashboard-reservation-box h2 {
     color: white;
     text-decoration: none;
     cursor: pointer;
@@ -587,15 +590,25 @@ span .navbar-toggler-icon{
     margin: auto;
     margin-top: 30px;
 }
-@media screen and (max-width: 450px) {
-    .dashboard-menu-box {
-        width: 50%;
+@media screen and (max-width: 500px) {
+    .option-boxes {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
-    .dashboard-reservation-box h2 a {
+    .dashboard-menu-box {
+        width: 80%;
+        height: 100px;
+    }
+    .dashboard-reservation-box {
+        width: 80%;
+        height: 100px;
+    }
+    .dashboard-reservation-box h2 {
         font-size: 20px;
         padding: 5px;
     }
-    .dashboard-menu-box h2 a {
+    .dashboard-menu-box h2  {
         font-size: 20px;
         padding: 5px;
     }
@@ -936,6 +949,12 @@ margin-top: 100px;
         width: 100%;
     }
   }
+  @media(max-width: 750px) {
+    .class {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+  }
 
   /*---EditReservation----*/
   
@@ -992,4 +1011,286 @@ margin-top: 100px;
           }
     }
 
+    /*----404 Page ---- */
+    .not-found-wrapper {
+        margin-top: 70px;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .not-found-wrapper h1 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .not-found-wrapper a {
+        display: inline-block;
+        text-decoration: none;
+        background-color: #94b9ff;
+        color: white;
+        border: 0px;
+        font-size: 16px;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    /*-----Edit Calculator-----*/
+    .calculator-wrapper {
+        margin-top: 70px;
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .calculator-form {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        padding: 50px;
+         background-color: black;
+         border-radius: 10px;
+    }
+    .calculator-form h1 {
+        margin-bottom: 30px;
+    }
+    .calculator-form label {
+        display: block;
+        padding-bottom: 5px;
+        padding-top: 10px;
+        font-size: 16px;
+    }
+    .calculator-form input {
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 5px;
+        padding-left: 10px;
+    }
+    .calculator-form button {
+        margin-top: 20px;
+        background-color: rgb(105, 155, 31);
+    color: white;
+    border: 0px;
+    font-size: 16px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    }
+    .calculator-form a {
+        display: inline-block;
+        text-decoration: none;
+        background-color: #94b9ff;
+        color: white;
+        border: 0px;
+        font-size: 16px;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    /*----Orders-----*/
+    .orders-wrapper {
+        margin-top: 70px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .orders-wrapper .orders {
+        margin-top: 50px;
+    }
+    .orders-btn {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .orders-btn .btn-add-dish {
+        width: 300px;
+        margin-bottom: 0px;
+    }
+    .orders-btn .btn-go-back {
+        width: 200px;
+        font-size: 18px;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    .orders-wrapper h3 {
+        font-size: 18px;
+    }
+    .order-detail {
+        text-align: left;
+    }
+    .active-orders {
+        margin-bottom: 50px;
+    }
+    .historic-orders {
+        margin-bottom: 50px;
+        max-height: 700px;
+        overflow: auto;
+        scrollbar-width: thin; 
+        scrollbar-color: transparent transparent;
+        -webkit-scrollbar-width: thin;
+        -webkit-scrollbar-color: transparent transparent;
+    }
     
+
+    .historic-orders::-webkit-scrollbar {
+        width: 6px; 
+    }
+    
+    .historic-orders::-webkit-scrollbar-thumb {
+        background-color: transparent; 
+    }
+    .orders-headline {
+       margin-bottom: 20px;
+       font-size: 28px;
+    }
+    .active-orders .edit-link {
+        margin-right: 10px;
+    }
+
+    @media (max-width: 600px) {
+        .orders-btn {
+            flex-direction: column;
+        }
+        .orders-btn .btn-add-dish {
+            margin-top: 20px;
+        }
+        .orders-wrapper h3 {
+            font-size: 16px;
+        }
+    }
+
+    /*----Dashboard-New-Order-----*/
+
+    .orders-wrapper-new {
+        margin-top: 70px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    textarea {
+        width: 90%;
+    }
+    .new-order-headline {
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    .new-order-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-bottom: 100px;
+
+    }
+    .new-order {
+        background-color: black;
+        padding: 30px;
+        margin: 10px;
+        text-align: left;
+    }
+    .new-order-wrapper .dashboard-menu-wrapper {
+        margin: 10px;
+    }
+    .tabel-number {
+        margin-bottom: 20px;
+
+    }
+    .tabel-number label {
+        display: block;
+
+        font-size: 20px;
+        margin-right: 10px;
+    }
+    .tabel-number input {
+        display: block;
+        font-size: 15px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-left: 15px;
+        border-radius: 5px;
+    }
+    .new-order h2 {
+        text-align: left;
+        font-size: 22px;
+        margin-bottom: 10px;
+        margin-top: 30px;
+    }
+    .new-order ul {
+        font-size: 17px;
+        text-align: left;
+    }
+    .new-order .btn-add-dish {
+        font-size: 16px;
+    }
+
+    .according-element {
+        text-align: left;
+    }
+    .according-element h3 {
+        display: flex;
+        align-items: center;
+
+    }
+    .according-element h3  button {
+        margin-right: 15px;
+        font-size: 14px;
+        width: 22px;
+        height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 0px;
+        background-color: rgb(105, 155, 31);
+        color: white;
+    }
+    .according-element-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    } 
+    .total-price {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+    .remove-dish-from-order {
+       
+        font-size: 16px;
+        width: 22px;
+        height: 22px;
+        
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 0px;
+        background-color: rgb(255, 47, 47);
+        color: white;
+    }
+    .order-dish-name {
+        font-size: 20px;
+    }
+    .orders-wrapper-new .error-message {
+        font-size: 14px;
+        padding: 5px;
+    }
+    @media (min-width: 1200px) {
+        .new-order-wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: start;
+            justify-content: center;
+        }
+    }
+    /*----Edit-Orders----*/

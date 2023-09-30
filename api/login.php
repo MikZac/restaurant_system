@@ -1,9 +1,9 @@
 <?php
-header("Access-Control-Allow-Origin: http://localhost:3000");
+header("Access-Control-Allow-Origin: https://mikolajzachas.pl/");
 header("Access-Control-Allow-Headers: *");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
-$con = mysqli_connect("localhost","root", "" );
-mysqli_select_db($con, "restaurant");
+$con = mysqli_connect("localhost","mikolajz_admin", "!Mikolaj2603" );
+mysqli_select_db($con, "mikolajz_restaurant");
 
 $data = json_decode(file_get_contents("php://input"));
 $email = $data->email;

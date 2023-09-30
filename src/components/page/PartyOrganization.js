@@ -1,145 +1,187 @@
-import * as React from "react";
-import { useEffect, useState } from 'react';
-import { useForm } from "react-hook-form";
+import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
+import axios from 'axios';
+
 export default function PartyOrganization() {
-    const [mainPrice, setMainPrice] = useState(0);
-    const [message, setMessage] = useState("")
-    const {
-        register,
-        handleSubmit,
-        reset,
-        control,
-        watch,
-        submissionId,
-        formState: {
-            errors,
-            isSubmitting,
-            
-        },
-        setError,
-    } = useForm({
-        defaultValues: {
-            "name": "",
-            "email": "",
-            "date": "",
-            "persons": "",
-            "menu": "",
-            "kidsMenu": false,
-            "kids": "",
-            "tort": false,
-            "drinkBar": false,
-            "alcohol": false,
-            "personDrinkingAlcohol": "",
-            "vignettes": false,
-            "countryTable": false,
-        }
+  const [mainPrice, setMainPrice] = useState(0);
+  const [calculatorData, setCalculatorData] = useState(null);
+
+  const intValueTort = parseInt(calculatorData?.tort || "0");
+  const intValueAlcohol = parseInt(calculatorData?.alcohol || "0");
+  const intValueCountryTable = parseInt(calculatorData?.countryTable || "0");
+  const intValueDrinkBar = parseInt(calculatorData?.drinkBar || "0");
+  const intValuekidsMenu = parseInt(calculatorData?.kidsMenu || "0");
+  const intValuePremium = parseInt(calculatorData?.premium || "0");
+  const intValueTraditional = parseInt(calculatorData?.traditional || "0");
+  const intValueVege = parseInt(calculatorData?.vege || "0");
+  const intValueVignettes = parseInt(calculatorData?.vignettes || "0");
+
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:80/api/calculator.php')
+      .then((response) => {
+        setCalculatorData(response.data);
+      })
+      .catch((error) => {
+        console.error('Błąd pobierania danych: ', error);
+      });
+  }, []);
+
+  const [message, setMessage] = useState('');
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    formState: { errors, isSubmitting },
+    setError,
+  } = useForm({
+    defaultValues: {
+      name: '',
+      email: '',
+      date: '',
+      persons: '',
+      menu: '',
+      kidsMenu: false,
+      kids: '',
+      tort: false,
+      drinkBar: false,
+      alcohol: false,
+      personDrinkingAlcohol: '',
+      vignettes: false,
+      countryTable: false,
+    },
+  });
+
+  const handleReset = () => {
+    reset({
+      name: '',
+      email: '',
+      date: '',
+      persons: '',
+      menu: '',
+      kidsMenu: false,
+      kids: '',
+      tort: false,
+      drinkBar: false,
+      alcohol: false,
+      personDrinkingAlcohol: '',
+      vignettes: false,
+      countryTable: false,
     });
-    const handleReset = (data) => {
-        reset({
-            "name": "",
-            "email": "",
-            "date": "",
-            "persons": "",
-            "menu": "",
-            "kidsMenu": false,
-            "kids": "",
-            "tort": false,
-            "drinkBar": false,
-            "alcohol": false,
-            "personDrinkingAlcohol": "",
-            "vignettes": false,
-            "countryTable": false,
-        })
-        setMainPrice(0); 
-        
+    setMainPrice(0);
+  };
+
+  const onSubmit = (data) => {
+    let menuStatus = 0;
+    let tortStatus = 0;
+    let drinkBarStatus = 0;
+    let alcoholStatus = 0;
+    let vignettesStatus = 0;
+    let countryTableStatus = 0;
+
+    if (calculatorData) {
+      if (data.tort === true) {
+        tortStatus = intValueTort; // Ustawiłem na stałe 100, dostosuj do swoich potrzeb
+      } else {
+        tortStatus = 0;
+      }
+
+      if (data.drinkBar === true) {
+        drinkBarStatus = intValueDrinkBar;
+      } else {
+        drinkBarStatus = 0;
+      }
+
+      if (data.vignettes === true) {
+        vignettesStatus = intValueVignettes;
+      } else {
+        vignettesStatus = 0;
+      }
+
+      if (data.countryTable === true) {
+        countryTableStatus = intValueCountryTable;
+      } else {
+        countryTableStatus = 0;
+      }
+
+      if (data.menu === 'Tradycyjne menu') {
+        menuStatus = intValueTraditional;
+      } else if (data.menu === 'Menu wegetariańskie') {
+        menuStatus = intValueVege;
+      } else if (data.menu === 'Menu Premium') {
+        menuStatus = intValuePremium;
+      } else {
+        menuStatus = 0;
+      }
     }
 
+    if (parseInt(data.kids) > parseInt(data.persons)) {
+      setError('kids', {
+        type: 'manual',
+        message: 'Liczba dzieci nie może być większa niż ogólna liczba osób',
+      });
+      return;
+    }
 
-    const onSubmit = (data) => {
-        let menuStatus = 0;
-        let tortStatus = 0;
-        let drinkBarStatus = 0;
-        let alcoholStatus = 0;
-        let vignettesStatus = 0;
-        let countryTableStatus = 0;
-        
-        if (data.tort === true) {
-            tortStatus = 300;
-        }
-        else {
-            tortStatus = 0;
-        }
-        if (data.drinkBar === true) {
-            drinkBarStatus = 1500;
-        }
-        else {
-            drinkBarStatus = 0;
-        }
-        if (data.vignettes === true) {
-            vignettesStatus = 7;
-        }
-        else {
-            vignettesStatus = 0;
-        }
-        if (data.countryTable === true) {
-            countryTableStatus = 1000;
-        }
-        else {
-            countryTableStatus = 0;
-        }
-        if (data.menu === "Tradycyjne menu") {
-            menuStatus = 150;
-        }
-        else if (data.menu === "Menu wegetariańskie") {
-            menuStatus = 170;
-        }
-        else if (data.menu === "Menu Premium") {
-            menuStatus = 200;
-        }
-        else {
-            menuStatus = 0;
-        }
-        if (parseInt(data.kids) > parseInt(data.persons)) {
-            setError("kids", {
-              type: "manual",
-              message: "Liczba dzieci nie może być większa niż ogólna liczba osób",
-            });
-            return;
+    let price =
+      menuStatus * data.persons +
+      intValuekidsMenu * data.kids +
+      tortStatus +
+      drinkBarStatus +
+      intValueAlcohol * data.personDrinkingAlcohol +
+      vignettesStatus * data.persons +
+      countryTableStatus;
+    setMainPrice(price);
+
+    var templateParts = {
+      data,
+      menuStatus,
+      tortStatus,
+      drinkBarStatus,
+      vignettesStatus,
+      countryTableStatus,
+      costPerPerson: data.persons * menuStatus,
+      costPerKids: data.kids * intValuekidsMenu,
+      costvignetteStatus: data.persons * vignettesStatus,
+      costAlcohol: data.personDrinkingAlcohol * intValueAlcohol,
+      price,
+    };
+
+    emailjs
+      .send('service_zky5ydp', 'template_bijp4nq', templateParts, 'vab5-4Cb_EoliyDQh')
+      .then(
+        (result) => {
+          if (result.text === 'OK') {
+            setMessage('Szczegóły oferty zostały wysłane na podany adres e-mail');
           }
-      
-        let price = (menuStatus * data.persons) + (40 * data.kids) + (tortStatus)
-            + (drinkBarStatus) + (50 * data.personDrinkingAlcohol) + (vignettesStatus * data.persons) + (countryTableStatus);
-        setMainPrice(price);
-        var templateParts = {
-            data,
-            menuStatus,
-            tortStatus,
-            drinkBarStatus,
-            vignettesStatus,
-            countryTableStatus,
-            costPerPerson: data.persons * menuStatus,
-            costPerKids: data.kids * 40,
-            costvignetteStatus: data.persons * vignettesStatus,
-            costAlcohol: data.personDrinkingAlcohol * 50,
-            price,
+        },
+        (error) => {
+          console.log(error.text);
+          setMessage('Coś poszło nie tak nie się wysłać oferty na maila');
         }
-        emailjs.send('service_zky5ydp', 'template_bijp4nq', templateParts, 'vab5-4Cb_EoliyDQh')
-            .then((result) => {
+      );
+      reset({
+        name: '',
+        email: '',
+        date: '',
+        persons: '',
+        menu: '',
+        kidsMenu: false,
+        kids: '',
+        tort: false,
+        drinkBar: false,
+        alcohol: false,
+        personDrinkingAlcohol: '',
+        vignettes: false,
+        countryTable: false,
+      });
+  };
 
-                if (result.text === "OK") {
-                    setMessage("Szczegóły oferty zostały wysłane na podany adres e-mail")
-                }
-            }, (error) => {
-                console.log(error.text);
-                setMessage("Coś poszło nie tak nie się wysłać oferty na maila")
-            });
-
-    }
-    if (submissionId) {
-        return <p>Formularz został wysłany poprawnie, szczegóły sprawdź na mailu</p>;
-    }
-    const minDate = new Date().toISOString().slice(0, 10);
+  const minDate = new Date().toISOString().slice(0, 10);
     return (
         <div className="wrapper-party">
            
@@ -329,7 +371,7 @@ export default function PartyOrganization() {
 
                 <div className="calculator-form-div" >
                     <label className="calculator-form-label" >
-                        <span className="calculator-form-span" >Trot</span>
+                        <span className="calculator-form-span" >Tort</span>
                         <input
                             {...register("tort")}
                             type="checkbox"
@@ -374,7 +416,7 @@ export default function PartyOrganization() {
                 </div>
 
                 <button className="calculated-btn" disabled={isSubmitting}>Oblicz koszt imprezy</button>
-                <p class="detail-offer">{message}</p>
+                <p className="detail-offer">{message}</p>
             </form>
             <button className="reset-btn"  onClick={handleReset}>Reset</button>
 

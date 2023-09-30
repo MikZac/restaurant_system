@@ -12,7 +12,6 @@ function Menu() {
 
     function getMenu() {
         axios.get('http://localhost:80/api/menu/').then(function (response) {
-            console.log(response.data);
             setMenu(response.data);
         });
     }

@@ -19,7 +19,6 @@ export default function AddDish() {
 
         setInputs(values => ({ ...values, [name]: value }));
 
-        console.log(inputs);
     }
     
     const handleSubmit = (event) => {
@@ -34,7 +33,6 @@ export default function AddDish() {
 
         axios.post('http://localhost:80/api/index.php/save/', inputs)
             .then(function (response) {
-                console.log(response.data);
                 navigate('/dashboard-menu');
             })
             .catch(function (error) {

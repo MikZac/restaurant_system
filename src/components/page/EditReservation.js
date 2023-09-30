@@ -58,13 +58,12 @@ function EditReservation() {
 
     const onSubmit = (data) => {
         axios.put(`http://localhost:80/api/reservation.php/${id}/edit`, data).then(function (response) {
-            console.log(response.data);
             navigate('/dashboard');
         });
     };
 
     const date = new Date();
-    date.setDate(date.getDate() + 1);
+    date.setDate(date.getDate());
     const minDate = date.toISOString().slice(0, 10);
 
     return (

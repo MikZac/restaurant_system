@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import { useState } from 'react';
 import axios from "axios";
 import './Home.css'
-export default function Reservation() {
 
+export default function Reservation() {
     const [message, setMessage] = useState("")
     const [messageClass, setMessageClass] = useState("");
     const {
@@ -23,7 +23,6 @@ export default function Reservation() {
             "surname": "",
             "guests": "",
             "email": "",
-            "phone": "",
             "date": "",
             "time": ""
         }
@@ -32,19 +31,18 @@ export default function Reservation() {
     const onSubmit = (data) => {
         axios.post('http://localhost:80/api/reservation.php/', data)
             .then(function (response) {
-                if (response.statusText === "OK") {
+                if (response.status === 200) {
                     setMessage("Twoja rezerwacja została wysłana.")
                     reset({
                         "name": "",
                         "surname": "",
                         "guests": "",
                         "email": "",
-                        "phone": "",
                         "date": "",
                         "time": ""
                     })
                     setMessageClass("success-message");
-                    setTimeout(()=> {
+                    setTimeout(() => {
                         setMessage("");
                         setMessageClass("");
                     }, 10000)
@@ -62,6 +60,13 @@ export default function Reservation() {
     const date = new Date();
     date.setDate(date.getDate() + 1);
     const minDate = date.toISOString().slice(0, 10);
+
+    // Oblicz minimalną i maksymalną wartość dla pola czasu
+    const currentTime = new Date();
+    currentTime.setHours(10, 0, 0); // Ustawić aktualny czas na 10:00
+    const minTime = currentTime.toISOString().slice(0, 16); // Minimalna godzina (10:00)
+    currentTime.setHours(20, 0, 0); // Ustawić aktualny czas na 20:00
+    const maxTime = currentTime.toISOString().slice(0, 16);
 
 
     return (
@@ -160,16 +165,6 @@ export default function Reservation() {
                             list="email"
                             className={errors["email"]? "error" : ""}
                         />
-                        <datalist id="email">
-                            <option value="1" />
-                            <option value="2" />
-                            <option value="3" />
-                            <option value="4" />
-                            <option value="5" />
-                            <option value="6" />
-                            <option value="7" />
-                            <option value="8" />
-                        </datalist>
                     </label>
                     {errors["email"] && <p className="error" role="alert">{errors["email"]?.message}</p>}
                 </div>

@@ -48,11 +48,9 @@ const DashboardReservation = () => {
             time: time
         };
 
-        console.log(templateParams);
 
         emailjs.send('service_zky5ydp', 'template_8ix73uq', templateParams, 'vab5-4Cb_EoliyDQh')
             .then((result) => {
-                console.log(result.text);
             }, (error) => {
                 console.log(error.text);
             });
@@ -63,14 +61,12 @@ const DashboardReservation = () => {
             }
         })
             .then(function (response) {
-                console.log(response.data);
                 getReservation();
             });
     };
     const date = new Date();
     date.setDate(date.getDate());
     const minDate = date.toISOString().slice(0, 10);
-    console.log(minDate);
     return (
         <div className='panel-admin-reservation'>
            
@@ -95,7 +91,7 @@ const DashboardReservation = () => {
                                                 <p>Godzina: {reserv.time}</p>
                                                 <p>Status rezerwacji: {reserv.status}</p>
                                                 {reserv.status === "NIEPOTWIERDZONE" ? (
-                                                    <button onClick={() => sendEmail(reserv.email, reserv.id, reserv.name, reserv.surname, reserv.guests, reserv.phone, reserv.date, reserv.time, "POTWIERDZONA")}>
+                                                    <button className='btn-confirmed' onClick={() => sendEmail(reserv.email, reserv.id, reserv.name, reserv.surname, reserv.guests, reserv.phone, reserv.date, reserv.time, "POTWIERDZONA")}>
                                                         Potwierdź
                                                     </button>
                                                 ) : (
@@ -173,7 +169,7 @@ const DashboardReservation = () => {
                                                 <p>Godzina: {reserv.time}</p>
                                                 <p>Status rezerwacji: {reserv.status}</p>
                                                 {reserv.status === "NIEPOTWIERDZONE" ? (
-                                                    <button onClick={() => sendEmail(reserv.email, reserv.id, reserv.name, reserv.surname, reserv.guests, reserv.phone, reserv.date, reserv.time, "POTWIERDZONA")}>
+                                                    <button className='btn-confirmed' onClick={() => sendEmail(reserv.email, reserv.id, reserv.name, reserv.surname, reserv.guests, reserv.phone, reserv.date, reserv.time, "POTWIERDZONA")}>
                                                         Potwierdź
                                                     </button>
                                                 ) : (

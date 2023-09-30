@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,6 +8,14 @@ const Login = () => {
 
     const [user, setUser] = useState({ email: '', password: '' });
     const [loginError, setLoginError] = useState('');
+
+    useEffect(() => {
+        // Sprawdź, czy użytkownik jest już zalogowany
+        const auth = localStorage.getItem('email');
+        if (auth) {
+            navigate('/dashboard'); // Przekieruj na dashboard
+        }
+    }, []);
 
     const handleChange = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value });
