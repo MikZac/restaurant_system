@@ -481,6 +481,23 @@ span .navbar-toggler-icon{
 
 }
 
+/*----PanelAdmin----*/
+.panel-admin-icon {
+    top: 80px;
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-end;
+    right: 20px;
+
+}
+.panel-admin-icon img{
+    margin-left: 15px;
+}
+.panel-admin img {
+    margin-left: 10px; /* Dodaje odstęp między ikonami (opcjonalnie) */
+}
+
 /*----Admin----*/
 .wrapper-admin {
     

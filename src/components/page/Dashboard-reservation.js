@@ -7,16 +7,16 @@ import emailjs from '@emailjs/browser';
 
 const DashboardReservation = () => {
    
-    const [auth, setAuth] = useState('');
-    let navigate = useNavigate(); // Use for Navigate on Previous
-    useEffect(() => {
-        var auth = localStorage.getItem('email');
-        setAuth(auth);
-    }, []);
+    // const [auth, setAuth] = useState('');
+    // let navigate = useNavigate(); // Use for Navigate on Previous
+    // useEffect(() => {
+    //     var auth = localStorage.getItem('email');
+    //     setAuth(auth);
+    // }, []);
 
-    if (auth === null) {
-        navigate(`/admin`);
-    }
+    // if (auth === null) {
+    //     navigate(`/admin`);
+    // }
 
     const [reservation, setReservation] = useState([]);
     const [activeKey, setActiveKey] = useState(null);

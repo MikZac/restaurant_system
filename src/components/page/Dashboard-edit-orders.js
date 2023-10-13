@@ -6,7 +6,7 @@ import axios from 'axios';
 import './Home.css';
 
 function EditOrder() {
-  const [auth, setAuth] = useState('');
+  // const [auth, setAuth] = useState('');
   const [menu, setMenu] = useState([]);
   const [order, setOrder] = useState({
     nr_zamowienia: '',
@@ -25,10 +25,10 @@ function EditOrder() {
 
   let nav = useNavigate();
 
-  useEffect(() => {
-    const auth = localStorage.getItem('email');
-    setAuth(auth);
-  }, []);
+  // useEffect(() => {
+  //   const auth = localStorage.getItem('email');
+  //   setAuth(auth);
+  // }, []);
 
   useEffect(() => {
     getMenu();

@@ -5,17 +5,17 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
 function EditMenu() {
-    const [auth, setAuth] = useState('');
-    let nav = useNavigate(); // Use for Navigate on Previous
+    // const [auth, setAuth] = useState('');
+    // let nav = useNavigate(); // Use for Navigate on Previous
 
-    useEffect(() => {
-        var auth = localStorage.getItem('email');
-        setAuth(auth);
-    }, []);
+    // useEffect(() => {
+    //     var auth = localStorage.getItem('email');
+    //     setAuth(auth);
+    // }, []);
 
-    if (auth === null) {
-        nav(`/admin`);
-    }
+    // if (auth === null) {
+    //     nav(`/admin`);
+    // }
 
     const navigate = useNavigate();
     const [inputs, setInputs] = useState({

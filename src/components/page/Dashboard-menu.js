@@ -5,16 +5,16 @@ import axios from 'axios';
 import './Home.css'
 
 const DashboardMenu = () => {
-    const [auth, setAuth] = useState('');
-    let navigate = useNavigate(); // Use for Navigate on Previous
-    useEffect(() => {
-        var auth = localStorage.getItem('email');
-        setAuth(auth);
-    },
-        [])
-    if (auth === null) {
-        navigate(`/admin`);
-    }
+    // const [auth, setAuth] = useState('');
+    // let navigate = useNavigate(); // Use for Navigate on Previous
+    // useEffect(() => {
+    //     var auth = localStorage.getItem('email');
+    //     setAuth(auth);
+    // },
+    //     [])
+    // if (auth === null) {
+    //     navigate(`/admin`);
+    // }
 
     const [menu, setMenu] = useState([]);
 

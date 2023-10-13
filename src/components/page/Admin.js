@@ -10,10 +10,9 @@ const Login = () => {
     const [loginError, setLoginError] = useState('');
 
     useEffect(() => {
-        // Sprawdź, czy użytkownik jest już zalogowany
         const auth = localStorage.getItem('email');
         if (auth) {
-            navigate('/dashboard'); // Przekieruj na dashboard
+            navigate('/dashboard');
         }
     }, []);
 
@@ -33,6 +32,7 @@ const Login = () => {
                 if (result.data.Status === '200') {
                     window.localStorage.setItem('email', result.data.email);
                     window.localStorage.setItem('userName', (result.data.first_name + ' ' + result.data.first_name));
+                    window.location.reload();
                     navigate(`/dashboard`);
                 } else {
                     setLoginError('Nieprawidłowy użytkownik');

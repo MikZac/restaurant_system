@@ -5,17 +5,17 @@ import axios from 'axios';
 import './Home.css';
 
 function Orders() {
-    const [auth, setAuth] = useState('');
-    let nav = useNavigate();
+    // const [auth, setAuth] = useState('');
+    // let nav = useNavigate();
 
-    useEffect(() => {
-        var auth = localStorage.getItem('email');
-        setAuth(auth);
-    }, []);
+    // useEffect(() => {
+    //     var auth = localStorage.getItem('email');
+    //     setAuth(auth);
+    // }, []);
 
-    if (auth === null) {
-        nav(`/admin`);
-    }
+    // if (auth === null) {
+    //     nav(`/admin`);
+    // }
 
     const [orders, setOrders] = useState([]);
     const [activeKey, setActiveKey] = useState(null);

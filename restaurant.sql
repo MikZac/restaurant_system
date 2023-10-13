@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Wrz 30, 2023 at 12:02 PM
+-- Generation Time: Paź 13, 2023 at 08:36 PM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.0.28
 
@@ -103,7 +103,8 @@ CREATE TABLE `register` (
 --
 
 INSERT INTO `register` (`id`, `email`, `password`, `first_name`, `last_name`) VALUES
-(1, 'admin@example.com', '1234', 'admin', 'admin');
+(2, 'mikolaj@admin.pl', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'mikolaj', 'admin'),
+(3, 'admin@example.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -134,12 +135,8 @@ INSERT INTO `reservation` (`id`, `name`, `surname`, `guests`, `email`, `phone`, 
 (5, 'Jurek', 'Kowalski', 3, 'kowalskijerzy@wp.com', '123456789', '2023-09-26', '16:30', 'POTWIERDZONA'),
 (6, 'Mikołaj Zachaś', 'Zachaś', 4, 'mikolaj26032000@gmail.com', '605423981', '2023-09-23', '14:00', 'POTWIERDZONA'),
 (9, 'Mikołaj ', 'Zachaś', 4, 'mikolaj26032000@gmail.com', '234678890', '2023-09-26', '10:30', 'POTWIERDZONA'),
-(10, 'Mikołaj ', 'Zachaś', 4, 'mikolaj26032000@gmail.com', '123456789', '2023-09-26', '12:00', 'NIEPOTWIERDZONE'),
-(11, 'Mikolaj', 'Zachaś', 7, 'mikolaj26032000@gmail.com', '123456789', '2023-09-26', '10:30', 'NIEPOTWIERDZONE'),
-(12, 'Mikołaj', 'Zachaś', 3, 'mikolaj26032000@gmail.com', '123456789', '2023-09-27', '12:00', 'NIEPOTWIERDZONE'),
 (13, 'ZachasV', 'Mikolaj', 4, 'mikolaj26032000@gmail.com', '123456789', '2023-10-05', '16:30', 'NIEPOTWIERDZONE'),
-(14, 'Mikołaj Zachaś', 'Nowak', 4, 'mikolaj26032000@gmail.com', '123456789', '2023-09-24', '8:00', 'NIEPOTWIERDZONE'),
-(15, 'Mikołaj Zachaś', 'Zachaś', 5, 'mikolaj26032000@gmail.com', '123456789', '2023-09-25', '15:00', 'NIEPOTWIERDZONE');
+(14, 'Mikołaj Zachaś', 'Nowak', 4, 'mikolaj26032000@gmail.com', '123456789', '2023-09-24', '8:00', 'NIEPOTWIERDZONE');
 
 -- --------------------------------------------------------
 
@@ -162,17 +159,8 @@ CREATE TABLE `zamowienia` (
 
 INSERT INTO `zamowienia` (`id_zamowienia`, `nr_stolika`, `status`, `wartosc`, `data_zamowienia`, `notatki`) VALUES
 (1, 1, 'ZAKONCZONE', 136.48, '2023-09-26 17:25:03', ''),
-(2, 2, 'AKTYWNE', 128.00, '2023-09-26 17:44:24', ''),
-(3, 4, 'AKTYWNE', 180.00, '2023-09-27 13:48:20', ''),
-(4, 8, 'AKTYWNE', 70.00, '2023-09-27 14:24:14', ''),
-(5, 0, 'ANULOWANE', 0.00, '2023-09-28 13:31:29', ''),
-(6, 1, 'ANULOWANE', 38.24, '2023-09-28 13:34:51', ''),
-(7, 5, 'ANULOWANE', 68.24, '2023-09-28 13:36:49', 'notatki'),
-(8, 10, 'ANULOWANE', 152.24, '2023-09-28 14:42:32', 'asdasdasd'),
-(9, 1, 'ANULOWANE', 112.24, '2023-09-28 15:59:23', ''),
-(10, 2, 'AKTYWNE', 80.00, '2023-09-28 16:43:43', 'asdsdfdasdf'),
-(11, 12, 'AKTYWNE', 190.24, '2023-09-28 16:44:07', 'asdasfd'),
-(12, 15, 'AKTYWNE', 187.24, '2023-09-28 17:48:52', 'Stek medium rare\n');
+(12, 15, 'AKTYWNE', 187.24, '2023-09-28 17:48:52', 'Stek medium rare\n'),
+(13, 4, 'AKTYWNE', 109.72, '2023-10-03 13:58:13', '');
 
 -- --------------------------------------------------------
 
@@ -195,37 +183,13 @@ INSERT INTO `zamowienia_dania` (`id`, `id_zamowienia`, `id_dania`, `ilosc`) VALU
 (1, 1, 2, 2),
 (2, 1, 3, 2),
 (3, 1, 8, 2),
-(8, 3, 13, 2),
-(10, 3, 18, 1),
-(23, 4, 12, 1),
-(24, 4, 18, 1),
-(25, 3, 14, 1),
-(28, 6, 2, 1),
-(29, 6, 3, 1),
-(30, 7, 2, 1),
-(31, 7, 3, 1),
-(32, 7, 8, 1),
-(33, 8, 2, 1),
-(34, 8, 3, 1),
-(35, 8, 8, 1),
-(36, 8, 13, 1),
-(37, 8, 14, 1),
-(38, 9, 2, 1),
-(39, 9, 3, 1),
-(40, 9, 8, 1),
-(41, 9, 13, 1),
-(46, 11, 2, 1),
-(47, 11, 3, 1),
-(48, 11, 8, 1),
-(49, 11, 13, 1),
-(50, 11, 14, 1),
-(51, 11, 15, 1),
-(85, 10, 14, 2),
-(90, 2, 13, 2),
-(91, 2, 14, 1),
 (110, 12, 2, 1),
 (111, 12, 16, 1),
-(112, 12, 18, 1);
+(112, 12, 18, 1),
+(116, 13, 2, 3),
+(117, 13, 11, 1),
+(118, 13, 12, 1),
+(119, 13, 17, 1);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -289,7 +253,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `register`
 --
 ALTER TABLE `register`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `reservation`
@@ -301,13 +265,13 @@ ALTER TABLE `reservation`
 -- AUTO_INCREMENT for table `zamowienia`
 --
 ALTER TABLE `zamowienia`
-  MODIFY `id_zamowienia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_zamowienia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `zamowienia_dania`
 --
 ALTER TABLE `zamowienia_dania`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 
 --
 -- Constraints for dumped tables

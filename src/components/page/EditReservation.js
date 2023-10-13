@@ -5,16 +5,16 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 function EditReservation() {
-    const [auth, setAuth] = useState('');
-    let nav = useNavigate();
-    useEffect(() => {
-        var auth = localStorage.getItem('email');
-        setAuth(auth);
-    }, []);
+    // const [auth, setAuth] = useState('');
+    // let nav = useNavigate();
+    // useEffect(() => {
+    //     var auth = localStorage.getItem('email');
+    //     setAuth(auth);
+    // }, []);
 
-    if (auth === null) {
-        nav(`/admin`);
-    }
+    // if (auth === null) {
+    //     nav(`/admin`);
+    // }
 
     const navigate = useNavigate();
     const { id, name } = useParams();

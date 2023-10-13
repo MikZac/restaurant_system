@@ -5,7 +5,7 @@ import axios from 'axios';
 import './Home.css';
 
 function NewOrder() {
-  const [auth, setAuth] = useState('');
+ 
   const [menu, setMenu] = useState([]);
   const [order, setOrder] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0.0);
@@ -16,11 +16,6 @@ function NewOrder() {
   const [menuError, setMenuError] = useState(false); 
 
   let nav = useNavigate();
-
-  useEffect(() => {
-    var auth = localStorage.getItem('email');
-    setAuth(auth);
-  }, []);
 
   useEffect(() => {
     getMenu();

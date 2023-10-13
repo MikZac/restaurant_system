@@ -4,17 +4,24 @@ import axios from 'axios';
 import './Home.css'
 import emailjs from '@emailjs/browser';
 const Dashboard = () => {
-    const [auth, setAuth] = useState('');
-    let navigate = useNavigate(); // Use for Navigate on Previous
-    useEffect(() => {
-        var auth = localStorage.getItem('email');
-        setAuth(auth);
-    },
-        [])
-    if (auth === null) {
-        navigate(`/admin`);
-    }
-    
+    // const [auth, setAuth] = useState('');
+    // let navigate = useNavigate();
+
+    // useEffect(() => {
+    //     var auth = localStorage.getItem('email');
+    //     setAuth(auth);
+    // }, []);
+
+    // const handleLogout = () => {
+    //     // Wylogowanie użytkownika - usuń dane z localStorage
+    //     localStorage.removeItem('email');
+    //     localStorage.removeItem('userName');
+    //     navigate('/admin'); // Przekieruj użytkownika na stronę logowania
+    // }
+
+    // if (auth === null) {
+    //     navigate(`/admin`);
+    // }
     return (
         <div className='dashboard-wrapper'>
         <div className='panel-admin'>
@@ -30,8 +37,11 @@ const Dashboard = () => {
             <div className='option-boxes'>
             <Link className='dashboard-reservation-box' to="/dashboard-calculator"><h2>Kalkulator</h2></Link>
             <Link className='dashboard-reservation-box' to="/dashboard-orders"><h2>Zamówienia</h2></Link>
-            </div>
+            </div >
+            <div>
             <Link className='btn-go-back' to='/'>Powrót do strony głównej</Link>
+
+            </div>
         </div>
         </div>
     )

@@ -1,8 +1,8 @@
-import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useAuth, AuthProvider } from './page/AuthContext';
 import Navigation from './navigation/Navigation'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css"
 import Home from "./page/Home";
 import Menu from "./page/Menu";
@@ -21,34 +21,50 @@ import CalculatorEdit from "./page/Dashboard-calculator";
 import Orders from "./page/Dashboard-orders";
 import NewOrder from "./page/Dashboard-new-order";
 import EditOrder from "./page/Dashboard-edit-orders";
+import PanelAdmin from "./panel-admin/dashboard-panel";
+
+
 
 
 const App = () => {
+  const { userEmail } = useAuth();
   return (
     <div className="App">
       <Router>
+      
         <Navigation />
+        <AuthProvider><PanelAdmin /></AuthProvider>
         <div>
+             
+            
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/rezerwacja" element={<Reservation />} />
             <Route path="/organizacja-imprez" element={<PartyOrganization />} />
             <Route path="/admin" element={<Admin />}></Route>
-            <Route path="/dashboard" element={<Dashboard />}></Route>
-            <Route path="/dashboard-menu" element={<DashboardMenu />}></Route>
-            <Route path="/dashboard-reservation" element={<DashboardReservation />}></Route>
-            <Route path="/dashboard-calculator" element={<CalculatorEdit />}></Route>
-            <Route path="/dashboard-menu/menu/:id/edit" element={<EditMenu />} />
-            <Route path="/dashboard/add-dish" element={<AddDish />} />
-            <Route path="/dashboard-reservation/reservation/:id/edit" element={<EditReservation />} />
-            <Route path="/dashboard-orders" element={<Orders />} />
-            <Route path="/dashboard-orders/add-order" element={<NewOrder />} />
-            <Route path="dashboard-orders/edit/:id" element={<EditOrder />} />
+            {userEmail ? ( // Sprawdź, czy użytkownik jest zalogowany
+              <>
+                
+                <Route path="/dashboard" element={<Dashboard />}></Route>
+                <Route path="/dashboard-menu" element={<DashboardMenu />}></Route>
+                <Route path="/dashboard-reservation" element={<DashboardReservation />}></Route>
+                <Route path="/dashboard-calculator" element={<CalculatorEdit />}></Route>
+                <Route path="/dashboard-menu/menu/:id/edit" element={<EditMenu />} />
+                <Route path="/dashboard/add-dish" element={<AddDish />} />
+                <Route path="/dashboard-reservation/reservation/:id/edit" element={<EditReservation />} />
+                <Route path="/dashboard-orders" element={<Orders />} />
+                <Route path="/dashboard-orders/add-order" element={<NewOrder />} />
+                <Route path="dashboard-orders/edit/:id" element={<EditOrder />} />
+              </>
+            ) : (
+              <Route path="/admin" element={<Admin />}/> // Przekieruj użytkownika do /admin, jeśli nie jest zalogowany
+            )}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </Router>
+
       <Footer/>
     </div>
   );
